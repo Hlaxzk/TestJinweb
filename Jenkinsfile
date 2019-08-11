@@ -23,7 +23,7 @@ pipeline {
         }
         stage('ArchiveArtifacts') {
             steps {
-                archiveArtifacts artifacts: 'TAC', fingerprint: true, onlyIfSuccessful: true
+                archiveArtifacts artifacts: 'TestJinweb.war', fingerprint: true, onlyIfSuccessful: true
             }
         }
         stage('Build DockerImage') {

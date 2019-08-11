@@ -23,7 +23,7 @@ pipeline {
         }
         stage('ArchiveArtifacts') {
             steps {
-                sh 'echo ARC'
+                archiveArtifacts artifacts: 'TAC', fingerprint: true, onlyIfSuccessful: true
             }
         }
         stage('Build DockerImage') {

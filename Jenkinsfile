@@ -28,7 +28,8 @@ pipeline {
         }
         stage('Build DockerImage') {
             steps {
-                sh 'echo build docker image'
+                sh 'cd target'
+                sh 'touch Dockerfile'
             }
         }
     }

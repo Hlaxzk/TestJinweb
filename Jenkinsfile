@@ -28,8 +28,7 @@ pipeline {
         }
         stage('Build DockerImage') {
             steps {
-                sh 'cd target'
-                sh 'touch Dockerfile'
+                sh 'cd target && touch Dockerfile'
             }
         }
     }

@@ -39,7 +39,7 @@ pipeline {
                 sh 'echo RUN rm -rf /usr/local/tomcat/webapps/examples >> target/Dockerfile'
                 sh 'echo RUN rm -rf /usr/local/tomcat/webapps/host-manager >> target/Dockerfile'
                 sh 'echo RUN rm -rf /usr/local/tomcat/webapps/manager >> target/Dockerfile'
-                sh 'cd target && docker build -t registry.hzkvm.com/library/TestJinweb:1.0 .'
+                sh 'cd target && docker build -t registry.hzkvm.com/library/testjinweb:1.0 .'
             }
         }
     }

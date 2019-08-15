@@ -29,8 +29,6 @@ pipeline {
         stage('Build DockerImage') {
             steps {
                 sh 'service docker start'
-            }
-            steps {
                 sh 'cd target && touch Dockerfile'
                 sh 'echo FROM tomcat:9.0.22 >> target/Dockerfile'
                 sh 'echo LABEL maintainer="hzk" >> target/Dockerfile'

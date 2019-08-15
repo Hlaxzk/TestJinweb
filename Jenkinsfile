@@ -29,7 +29,16 @@ pipeline {
         stage('Build DockerImage') {
             steps {
                 sh 'cd target && touch Dockerfile'
-                sh 'echo test >> target/Dockerfile'
+                sh 'echo FROM tomcat:9.0.22 >> target/Dockerfile'
+                sh 'echo LABEL maintainer="hzk" >> target/Dockerfile'
+                sh 'echo RUN rm -f /usr/local/tomcat/README.md >> target/Dockerfile'
+                sh 'echo RUN rm -f /usr/local/tomcat/BUILDING.txt >> target/Dockerfile'
+                sh 'echo RUN rm -f /usr/local/tomcat/CONTRIBUTING.md >> target/Dockerfile'
+                sh 'echo RUN rm -rf /usr/local/tomcat/webapps/ROOT >> target/Dockerfile'
+                sh 'echo RUN rm -rf /usr/local/tomcat/webapps/docs >> target/Dockerfile'
+                sh 'echo RUN rm -rf /usr/local/tomcat/webapps/examples >> target/Dockerfile'
+                sh 'echo RUN rm -rf /usr/local/tomcat/webapps/host-manager >> target/Dockerfile'
+                sh 'echo RUN rm -rf /usr/local/tomcat/webapps/manager >> target/Dockerfile'
             }
         }
     }

@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Build DockerImage') {
             steps {
-              sh 'echo docker ps'
+              sh 'docker ps'
             }
         }
     }

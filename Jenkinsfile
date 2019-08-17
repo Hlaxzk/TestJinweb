@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Send Artifacts') {
             steps {
-              sh 'scp target/TestJinweb.war root@192.168.2.136:/root/dockerfiles'
+              sh 'echo'
             }
         }
     }

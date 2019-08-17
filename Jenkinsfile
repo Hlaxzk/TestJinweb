@@ -1,5 +1,5 @@
 pipeline {
-    agent slv1
+    agent any
     stages {
         stage('Update pom') {
             steps {

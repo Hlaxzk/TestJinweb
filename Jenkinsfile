@@ -26,9 +26,9 @@ pipeline {
                 archiveArtifacts artifacts: 'target/TestJinweb.war', fingerprint: true, onlyIfSuccessful: true
             }
         }
-        stage('Send Artifacts') {
+        stage('Build DockerImage') {
             steps {
-              sh 'echo'
+              sh 'echo docker ps'
             }
         }
     }
